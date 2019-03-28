@@ -4,27 +4,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class entrevista_modelo extends CI_Model
 {
 
+	public function __construct();
+  {
+    parent:: __construct();
+  }
 
-	
-	public function Insertar_datos($Insertar)
-	{
-		$this->db->insert('entrevista');	
-        
-        $this->db->set('Experiencia', $Insertar['Experiencia_Laboral']);
-        $this->db->set('Caracteristicas_Personale', $Insertar['Caracteristicas_Personales_id']);
-        $this->db->set('Referencias_Laborales', $Insertar['Referencias_Laborales']);
-        $this->db->set('Conocimiento_Institucional', $Insertar['Conocimiento_Institucional']);
-        $this->db->set('Preguntas_Institucionales', $Insertar['Preguntas_Institucionales_id']);
-        $this->db->set('Referencias_Entrevista', $Insertar['Referencias_Entrevista_id']);
-	}
-          public function mostrar_entrevista()
-          	{
-          		$mostrar=$this->db->get('entrevista');
-          		return $mostrar->result();
-          }
+  public function registrar($data)
+  {
+    $this->db->trans_begin();
+    
+    $this->db->insert('entrevista',   array(
+      'Experiencia' => $data['Experiencia_Laboral'],
+      'Caracteristicas_Personales' => $data['Caracteristicas_Personales'],
+      'Referencias_Laboraes' => $data['Referencias_Laborales'],
+      'Conocimiento_Istitucional' => $data['Conocimiento_Institucional'],
+      'Preguntas_Institucionales' => $data['Pregunta_Institucionales_id'],
+      'Referencias_Entrevista' => $data['Referencias_Entrevista'];
+ }
+  ));
 
-           
+    $id_entrevista = $this->db->insert_id();
 
-
+    foreach($data['entrevista'] as $id_entrevista){
+      $this->db->insert('entrevista', array(
+      ));
+    }
 }
  ?>

@@ -8,7 +8,7 @@ class entre_control extends CI_Controller{
 		$this->load->view('contenidos/navbar_general');
 		$this->load->view('modulo/entrevista_view');
 	}
-
+ 
 }
 
  ?>

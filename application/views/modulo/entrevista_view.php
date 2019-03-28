@@ -24,7 +24,7 @@
                  <div class="col-md-10">
                  	<input class="form-control" type="text" name="Dirrecion de residencia" placeholder="Direccion de Recidencia">
                  </div>
-                 <br><br><br>
+                 <br><br><br> 
                  <div class="col-md-8">
                  	<input class="form-control" type="text" name="Estado Civiol" placeholder="Estado civil">
                  </div>
