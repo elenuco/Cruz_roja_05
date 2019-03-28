@@ -5,7 +5,15 @@
 </head>
 <body>
 <table>
-	
+	<thead>
+		<tr>
+			<td>foto</td>
+			<td>nombre</td>
+			<td>apellidos</td>
+			<td>detalles</td>
+			<td>Accciones</td>
+		</tr>
+	</thead>
 </table>
 </body>
 </html>
